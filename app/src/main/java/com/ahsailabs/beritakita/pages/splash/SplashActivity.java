@@ -1,15 +1,14 @@
-package com.ahsailabs.beritakita.pages;
+package com.ahsailabs.beritakita.pages.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 
 import com.ahsailabs.beritakita.R;
+import com.ahsailabs.beritakita.pages.home.HomeActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,11 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent nextPageIntent = new Intent(
-                        SplashActivity.this,
-                        MainActivity.class);
-                startActivity(nextPageIntent);
-
+                HomeActivity.start(SplashActivity.this);
                 finish();
             }
         }, 3000);
@@ -44,11 +39,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Intent nextPageIntent = new Intent(
-                        SplashActivity.this,
-                        MainActivity.class);
-                startActivity(nextPageIntent);
-
+                HomeActivity.start(SplashActivity.this);
                 finish();
             }
         }.start();
