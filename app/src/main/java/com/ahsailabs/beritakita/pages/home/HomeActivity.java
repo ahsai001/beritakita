@@ -127,7 +127,7 @@ public class HomeActivity extends AppCompatActivity
             public boolean onQueryTextSubmit(String query) {
                 keyword = query;
                 swipeRefreshLayoutUtil.refreshNow();
-                return true;
+                return false;
             }
 
             @Override
@@ -141,7 +141,7 @@ public class HomeActivity extends AppCompatActivity
             public boolean onClose() {
                 keyword = "";
                 swipeRefreshLayoutUtil.refreshNow();
-                return true;
+                return false;
             }
         });
 
