@@ -4,20 +4,20 @@ package com.ahsailabs.beritakita.configs;
  * Created by ahmad s on 2019-09-26.
  */
 public class Config {
-    private static final String BASE_URL = "https://api.ahsailabs.com/cijou/";
+    private static final String BASE_URL = "https://api.zaitunlabs.com/kango/cijou/";
     public static final String API_KEY = "qwerty123456";
     public static final String GROUP_CODE = "ABJAL1";
 
-    public static final String getLoginUrl(){
+    public static String getLoginUrl(){
         return BASE_URL+"login";
     }
-    public static final String getNewsListUrl(){
+    public static String getNewsListUrl(){
         return BASE_URL+"news/all";
     }
-    public static final String getNewsDetailUrl(){
+    public static String getNewsDetailUrl(){
         return BASE_URL+"news/detail/{id}";
     }
-    public static final String getAddNewsUrl(){
+    public static String getAddNewsUrl(){
         return BASE_URL+"news/add";
     }
 
