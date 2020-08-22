@@ -9,27 +9,39 @@ public class NewsDetail {
     @SerializedName("id")
     @Expose
     private String id;
+
     @SerializedName("group_id")
     @Expose
     private String groupId;
+
     @SerializedName("title")
     @Expose
     private String title;
+
     @SerializedName("summary")
     @Expose
     private String summary;
+
+    @SerializedName("photo")
+    @Expose
+    private String photo;
+
     @SerializedName("body")
     @Expose
     private String body;
+
     @SerializedName("created_by")
     @Expose
     private String createdBy;
+
     @SerializedName("created_at")
     @Expose
     private String createdAt;
+
     @SerializedName("updated_by")
     @Expose
     private Object updatedBy;
+
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;
@@ -64,6 +76,14 @@ public class NewsDetail {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getBody() {

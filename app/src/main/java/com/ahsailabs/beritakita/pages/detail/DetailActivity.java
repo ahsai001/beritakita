@@ -20,14 +20,17 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.ahsailabs.beritakita.R;
+import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {
     public static final String PARAM_NEWS_ID = "param_news_id";
@@ -35,6 +38,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvUser;
     private TextView tvDate;
     private TextView tvBody;
+    private ImageView ivPhoto;
     private ScrollView svMain;
 
     private LinearLayout llLoadingPanel;
@@ -67,7 +71,7 @@ public class DetailActivity extends AppCompatActivity {
         tvUser = findViewById(R.id.tvUser);
         tvDate = findViewById(R.id.tvDate);
         tvBody = findViewById(R.id.tvBody);
-
+        ivPhoto = findViewById(R.id.ivPhoto);
         svMain = findViewById(R.id.svMain);
 
 
@@ -96,6 +100,9 @@ public class DetailActivity extends AppCompatActivity {
                             tvDate.setText(newsDetail.getCreatedAt());
                             tvUser.setText(newsDetail.getCreatedBy());
                             tvBody.setText(newsDetail.getBody());
+                            if(!TextUtils.isEmpty(newsDetail.getPhoto())) {
+                                Picasso.get().load(newsDetail.getPhoto()).into(ivPhoto);
+                            }
                         } else {
                             InfoUtil.showToast(DetailActivity.this, response.getMessage());
                         }

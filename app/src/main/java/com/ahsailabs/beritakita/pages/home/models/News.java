@@ -8,12 +8,19 @@ public class News {
     @SerializedName("id")
     @Expose
     private String id;
+
     @SerializedName("title")
     @Expose
     private String title;
+
     @SerializedName("summary")
     @Expose
     private String summary;
+
+    @SerializedName("photo")
+    @Expose
+    private String photo;
+
     @SerializedName("created_at")
     @Expose
     private String createdAt;
@@ -44,6 +51,14 @@ public class News {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getCreatedAt() {

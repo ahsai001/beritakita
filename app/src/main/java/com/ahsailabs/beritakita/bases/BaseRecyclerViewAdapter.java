@@ -30,7 +30,6 @@ public abstract class BaseRecyclerViewAdapter<DM, HV extends RecyclerView.ViewHo
         this.modelList = modelList;
     }
 
-    @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if(viewType == VIEW_ITEM) {
@@ -74,7 +73,7 @@ public abstract class BaseRecyclerViewAdapter<DM, HV extends RecyclerView.ViewHo
         notifyDataSetChanged();
     }
 
-    private class ProgressViewHolder extends RecyclerView.ViewHolder {
+    private static class ProgressViewHolder extends RecyclerView.ViewHolder {
         TextView descView;
         private ProgressViewHolder(View view) {
             super(view);
@@ -87,7 +86,7 @@ public abstract class BaseRecyclerViewAdapter<DM, HV extends RecyclerView.ViewHo
             @Override
             public void onClick(View view) {
                 if(onChildViewClickListener != null) {
-                    int position = viewHolder.getAdapterPosition();
+                    int position = viewHolder.getBindingAdapterPosition();
                     onChildViewClickListener.onClick(view, (DM)modelList.get(position), position);
                 }
             }
@@ -99,7 +98,7 @@ public abstract class BaseRecyclerViewAdapter<DM, HV extends RecyclerView.ViewHo
             @Override
             public boolean onLongClick(View view) {
                 if(onChildViewClickListener != null) {
-                    int position = viewHolder.getAdapterPosition();
+                    int position = viewHolder.getBindingAdapterPosition();
                     onChildViewClickListener.onLongClick(view, (DM)modelList.get(position), position);
                     return true;
                 }
