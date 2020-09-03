@@ -238,7 +238,6 @@ public class HomeActivity extends AppCompatActivity
         });
     }
 
-
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         if(item.getItemId() == R.id.action_delete){
