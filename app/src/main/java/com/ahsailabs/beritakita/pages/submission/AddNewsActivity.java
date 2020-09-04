@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.ahsailabs.beritakita.configs.Config;
-import com.ahsailabs.beritakita.pages.home.models.GeneralResponse;
+import com.ahsailabs.beritakita.pages.submission.models.AddNewsResponse;
 import com.ahsailabs.beritakita.pages.login.LoginActivity;
 import com.ahsailabs.beritakita.utils.HttpUtil;
 import com.ahsailabs.beritakita.utils.InfoUtil;
@@ -206,9 +206,9 @@ public class AddNewsActivity extends AppCompatActivity {
 
                     }
                 })
-                .getAsObject(GeneralResponse.class, new ParsedRequestListener<GeneralResponse>() {
+                .getAsObject(AddNewsResponse.class, new ParsedRequestListener<AddNewsResponse>() {
                     @Override
-                    public void onResponse(GeneralResponse response) {
+                    public void onResponse(AddNewsResponse response) {
                         hideLoading();
                         if (response.getStatus() == 1) {
                             InfoUtil.showToast(AddNewsActivity.this, response.getMessage());

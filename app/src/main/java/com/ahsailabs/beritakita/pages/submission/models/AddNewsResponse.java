@@ -1,10 +1,10 @@
 
-package com.ahsailabs.beritakita.pages.home.models;
+package com.ahsailabs.beritakita.pages.submission.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class GeneralResponse {
+public class AddNewsResponse {
 
     @SerializedName("status")
     @Expose
