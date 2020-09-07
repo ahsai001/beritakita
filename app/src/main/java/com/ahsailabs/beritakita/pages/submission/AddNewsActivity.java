@@ -20,6 +20,7 @@ import com.androidnetworking.interfaces.ParsedRequestListener;
 import com.androidnetworking.interfaces.UploadProgressListener;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -105,7 +106,7 @@ public class AddNewsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String[] options = {"Camera","Gallery"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(AddNewsActivity.this);
+                AlertDialog. Builder builder = new AlertDialog.Builder(AddNewsActivity.this);
                 builder.setTitle("How do you get the image?");
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
@@ -123,6 +124,19 @@ public class AddNewsActivity extends AppCompatActivity {
                     }
                 });
                 builder.create().show();
+
+                //MaterialAlertDialog
+                /*
+                MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(AddNewsActivity.this);
+                materialAlertDialogBuilder.setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                materialAlertDialogBuilder.create().show();
+                 */
             }
         });
     }
